@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    Główna
+  </div>
 </template>
 
 <script>

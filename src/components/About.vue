@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    O nas
+  </div>
 </template>
 
 <script>
