@@ -1,8 +1,12 @@
 <template>
-  <div>
+  <div class="container">
     <app-header></app-header>
     <hr>
-    <router-view></router-view>
+    <main>
+      <router-view></router-view>
+    </main>
+    <hr>
+    <footer class="footer">footer</footer>
   </div>
 </template>
 
@@ -15,4 +19,29 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "./scss/_variables.scss";
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightgray;
+    font-family: "Arial";
+    
+    .footer{
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      width: $mainWidth;
+    }
+  }
+
+
 </style>

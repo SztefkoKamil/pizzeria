@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <article class="menu-addons">
     Addons
-  </div>
+  </article>
 </template>
 
 <script>
@@ -11,5 +11,10 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "../scss/_variables.scss";
+
+  .menu-addons{
+    background: skyblue;
+  }
 
 </style>
