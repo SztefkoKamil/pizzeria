@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    Pizza
+  </div>
 </template>
 
 <script>

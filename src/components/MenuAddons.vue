@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    Addons
+  </div>
 </template>
 
 <script>
