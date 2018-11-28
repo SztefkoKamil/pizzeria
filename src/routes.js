@@ -15,6 +15,6 @@ export default [
     ]
   },
   { path: '/about', component: About },
-  // { path: '*', redirect: '/' }
+  { path: '*', redirect: '/' }
 
 ]
