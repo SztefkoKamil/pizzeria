@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <app-header></app-header>
-    <hr>
     <main>
-      <router-view></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </main>
-    <hr>
     <footer class="footer">
       <p>
         <span>Telefon: 11 222 33 44</span>
@@ -38,15 +38,41 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: lightgray;
+    background: url("assets/img/vintage-concrete.png");
     font-family: "Arial";
     
     .footer{
-      background: #000;
-      color: #fff;
+      background: #120D31;
+      color: #ddd;
       text-align: center;
       padding: 20px;
       width: $mainWidth;
+    }
+  }
+
+  /* ----- Vue transition ----- */
+
+  .fade-enter-active{
+    animation: fade-in .2s linear 1;
+  }
+  @keyframes fade-in{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  .fade-leave-active{
+    animation: fade-out .2s linear 1;
+  }
+  @keyframes fade-out{
+    from{
+      opacity: 1;
+    }
+    to{
+      opacity: 0;
     }
   }
 

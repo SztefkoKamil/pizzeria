@@ -3,8 +3,8 @@
     <div class="header-logo">
       <img class="logo-img" src="../assets/img/logo-pizza.png" alt="">
       <h1>
-        <span>Pizzeria</span>
-        <span>Don Mariano</span>
+        <span class="header-title">Pizzeria</span>
+        <span class="header-title">Don Mariano</span>
       </h1>
     </div>
     <nav class="header-nav">
@@ -25,33 +25,58 @@ export default {
   @import "../scss/_variables.scss";
 
   .header{
-    height: 100px;
+    height: 120px;
     width: $mainWidth;
-    background: #fff;
+    background: #120D31;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    align-items: center;
+    padding: 10px 20px 10px 10px;
 
     .header-logo{
       display: flex;
       align-items: center;
 
       .logo-img{
-        width: 100px;
+        width: 150px;
+        margin-right: 20px;
+      }
+    
+      .header-title{
+        font-family: 'Gloria Hallelujah', cursive;
+        font-size: 50px;
+        color: #471323;
+        $shadowColor: #1bad34;
+        text-shadow: 1px 1px 0 $shadowColor, -1px 1px 0 $shadowColor, 
+                    -1px -1px 0 $shadowColor, 1px -1px 0 $shadowColor;
       }
     }
 
     .header-nav{
-      width: 200px;
+      width: 220px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: #A690A4;
+      padding: 7px;
+      border-radius: 5px;
 
       .menu-link{
         text-decoration: none;
+        font-weight: bold;
         color: #000;
-        background: #c5f7e2;
+        background: #A690A4;
         padding: 5px;
+        border-radius: 5px;
+        transition: all .2s;
+
+        &:hover{
+          background: rgb(131, 112, 129);
+        }
+      }
+      .router-link-exact-active{
+        border: 1px solid #000;
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <section class="start">
-    <h1>Witaj na stronie pizzeri Don Mariano, zapraszamy na najlepszą pizzę w okolicy!</h1>
+    <h2 class="start-title">Zapraszamy na najlepszą pizzę w okolicy!</h2>
     <div>
       <swiper :options="swiperOption" class="swiper-box">
         <swiper-slide class="swiper-item">
@@ -70,6 +70,11 @@ export default {
   .start{
     width: $mainWidth;
     min-height: 600px;
+    background: $bgColor;
+
+    .start-title{
+      font-family: 'Open Sans', sans-serif;
+    }
 
     .swiper-box {
       width: 700px;

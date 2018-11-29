@@ -633,6 +633,7 @@ export default {
   .menu{
     width: $mainWidth;
     min-height: 600px;
+    background: $bgColor;
 
     .submenu{
       text-align: center;

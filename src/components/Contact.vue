@@ -1,8 +1,8 @@
 <template>
-  <section class="about">
+  <section class="contact">
     <div>
       <div>
-        <h2>Zapraszamy do odwiedzin lub kontaktu telefonicznego.</h2>
+        <h3>Zapraszamy do odwiedzin lub kontaktu telefonicznego.</h3>
         <p>Lokal czynny przez cały tydzień od 10 do 22.</p>
         <p>Dowóz w promieniu 20km gratis!</p>
       </div>
@@ -48,9 +48,10 @@ export default {
 <style lang="scss">
   @import "../scss/_variables.scss";
 
-  .about{
+  .contact{
     width: $mainWidth;
     min-height: 600px;
+    background: $bgColor;
 
     #map{
       width: 100%;
