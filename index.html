@@ -9,13 +9,13 @@
     <script src="/dist/build.js"></script>
     <script>
       function initMap() {
-        var location = {lat: 49.8477062, lng: 19.1496001};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        const location = {lat: 49.8477062, lng: 19.1496001};
+        const map = new google.maps.Map(document.getElementById('map'), {
           zoom: 18,
           center: location,
           gestureHandling: 'none'
         });
-        var marker = new google.maps.Marker({
+        const marker = new google.maps.Marker({
           position: location,
           map: map,
           title: 'Tu jesteśmy!'

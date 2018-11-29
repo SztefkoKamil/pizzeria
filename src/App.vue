@@ -6,7 +6,14 @@
       <router-view></router-view>
     </main>
     <hr>
-    <footer class="footer">footer</footer>
+    <footer class="footer">
+      <p>
+        <span>Telefon: 11 222 33 44</span>
+        <span>Adres: Krakowska 40, 43-340 Kozy</span>
+        <span>Czynne codziennie od 10 do 22.</span>
+      </p>
+      <p>webkas 2018 &copy &#8195 All rights reserved. &#8195 e-mail: webkas.dev@gmail.com</p>
+    </footer>
   </div>
 </template>
 
