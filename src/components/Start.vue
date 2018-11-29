@@ -32,6 +32,7 @@
         </swiper-slide>
       </swiper>
     </div>
+    <p>Witamy serdecznie na stronie naszej pizzerii. Działamy już ponad 8 lat i dzięki naszym klientom zapewne będziemy działać stale. Przez tak długi czas mieliśmy możliwość nauczyć się jak dopracować nasze pizze, aby były one najwyższej jakości przy możliwie najlepszej cenie. Ponieważ specjalnie duży nacisk kładziemy na jakość, nasze produkty są produkowane na bazie tylko naturalnych składników, nie używamy chemicznych spulchniaczy do ciasta, nie stosujemy konserwantów do sosów, wybieramy tylko lokalne firmy, które gwarantują najwyższą jakość produktu. Przekonaj się że najwyższa jakość naszej pizzy to nie plotka! Odwiedź nas, lub zamów pizzę z dostawą do domu, dzwoń pod numer <strong>11 222 33 44</strong>. Zapraszamy!</p>
   </section>
 </template>
 
@@ -50,8 +51,11 @@ export default {
           direction: 'horizontal',
           slidesPerView: 1,
           mousewheel: false,
+          loop: true,
+          spaceBetween: 0,
+          speed: 1000,
           autoplay: {
-            delay: 3000
+            delay: 2000
           }
         }
       }
@@ -68,8 +72,7 @@ export default {
     min-height: 600px;
 
     .swiper-box {
-      width: 100%;
-      height: 100%;
+      width: 700px;
       margin: 0 auto;
 
       .swiper-item {

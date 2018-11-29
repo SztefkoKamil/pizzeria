@@ -10,7 +10,7 @@
     <nav class="header-nav">
       <router-link class="menu-link" to="/">Główna</router-link>
       <router-link class="menu-link" to="/menu">Menu</router-link>
-      <router-link class="menu-link" to="/about">O nas</router-link>
+      <router-link class="menu-link" to="/contact">Kontakt</router-link>
     </nav>
   </header>
 </template>

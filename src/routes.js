@@ -1,6 +1,6 @@
 import Start from './components/Start';
 import Menu from './components/Menu';
-import About from './components/About';
+import Contact from './components/Contact';
 import MenuPizza from './components/MenuPizza';
 import MenuAddons from './components/MenuAddons';
 
@@ -14,7 +14,7 @@ export default [
       { path: 'addons', component: MenuAddons }
     ]
   },
-  { path: '/about', component: About },
+  { path: '/contact', component: Contact },
   { path: '*', redirect: '/' }
 
 ]
