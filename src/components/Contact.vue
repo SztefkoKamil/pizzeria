@@ -30,8 +30,8 @@
             <label for="form-message">Wiadomość</label>
             <textarea id="form-message" cols="30" rows="10"></textarea>
           </div>
-          <button>Wyślij</button>
         </form>
+          <button @click="init">Wyślij</button>
       </div>
     </div>
   </section>
@@ -39,7 +39,9 @@
 
 <script>
 export default {
-  
+  mounted(){
+    initMap();
+  }
 }
 </script>
 

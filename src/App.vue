@@ -12,7 +12,7 @@
         <span>Adres: Krakowska 40, 43-340 Kozy</span>
         <span>Czynne codziennie od 10 do 22.</span>
       </p>
-      <p>webkas 2018 &copy &#8195 All rights reserved. &#8195 e-mail: webkas.dev@gmail.com</p>
+      <p>Kamil Sztefko 2018 &copy &#8195 Strona demonstracyjna. &#8195 e-mail: sztefkokamil@gmail.com</p>
     </footer>
   </div>
 </template>

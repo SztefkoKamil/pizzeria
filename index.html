@@ -2,11 +2,20 @@
 <html lang="pl">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="discription" content="Demonstration page made by Kamil Sztefko">
+    <meta name="author" content="Kamil Sztefko">
+
     <title>Pizzeria Don Mariano</title>
   </head>
   <body>
     <div id="app"></div>
     <script src="/dist/build.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-L0hPW5ae5rLr2d9G5NEukPAnW4L9L3o&callback=initMap">
+    </script>
     <script>
       function initMap() {
         const location = {lat: 49.8477062, lng: 19.1496001};
@@ -21,9 +30,6 @@
           title: 'Tu jesteśmy!'
         });
       }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-L0hPW5ae5rLr2d9G5NEukPAnW4L9L3o&callback=initMap">
     </script>
   </body>
 </html>
