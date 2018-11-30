@@ -1,7 +1,7 @@
 <template>
   <section class="start">
     <h2 class="start-title">Zapraszamy na najlepszą pizzę w okolicy!</h2>
-    <div>
+    <div class="swiper-wrapper">
       <swiper :options="swiperOption" class="swiper-box">
         <swiper-slide class="swiper-item">
           <img src="src/assets/img/slide/slide-pizza-1.jpg" alt="slider pizza image 1">
@@ -32,7 +32,7 @@
         </swiper-slide>
       </swiper>
     </div>
-    <p>Witamy serdecznie na stronie naszej pizzerii. Działamy już ponad 8 lat i dzięki naszym klientom zapewne będziemy działać stale. Przez tak długi czas mieliśmy możliwość nauczyć się jak dopracować nasze pizze, aby były one najwyższej jakości przy możliwie najlepszej cenie. Ponieważ specjalnie duży nacisk kładziemy na jakość, nasze produkty są produkowane na bazie tylko naturalnych składników, nie używamy chemicznych spulchniaczy do ciasta, nie stosujemy konserwantów do sosów, wybieramy tylko lokalne firmy, które gwarantują najwyższą jakość produktu. Przekonaj się że najwyższa jakość naszej pizzy to nie plotka! Odwiedź nas, lub zamów pizzę z dostawą do domu, dzwoń pod numer <strong>11 222 33 44</strong>. Zapraszamy!</p>
+    <p class="start-about">Witamy serdecznie na stronie naszej pizzerii. Działamy już ponad 8 lat i dzięki naszym klientom zapewne będziemy działać stale. Przez tak długi czas mieliśmy możliwość nauczyć się jak dopracować nasze pizze, aby były one najwyższej jakości przy możliwie najlepszej cenie. Ponieważ specjalnie duży nacisk kładziemy na jakość, nasze produkty są produkowane na bazie tylko naturalnych składników, nie używamy chemicznych spulchniaczy do ciasta, nie stosujemy konserwantów do sosów, wybieramy tylko lokalne firmy, które gwarantują najwyższą jakość produktu. Przekonaj się że najwyższa jakość naszej pizzy to nie plotka! Odwiedź nas, lub zamów pizzę z dostawą do domu, dzwoń pod numer <strong>11 222 33 44</strong>. Zapraszamy!</p>
   </section>
 </template>
 
@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "../scss/_variables.scss";
+  @import "../scss/_common.scss";
 
 
   .start{
@@ -74,15 +74,28 @@ export default {
 
     .start-title{
       font-family: 'Open Sans', sans-serif;
+      text-align: center;
+      padding: 20px;
     }
 
-    .swiper-box {
-      width: 700px;
-      margin: 0 auto;
-
-      .swiper-item {
-        width: 100%;
+    .swiper-wrapper{
+      background: #5E4B56;
+      padding: 20px 0 18px 0;
+      
+      .swiper-box {
+        width: 700px;
+        margin: 0 auto;
+  
+        .swiper-item {
+          width: 100%;
+        }
       }
+    }
+
+    .start-about{
+      padding: 20px;
+      font-size: 18px;
+      line-height: 22px;;
     }
   }
 

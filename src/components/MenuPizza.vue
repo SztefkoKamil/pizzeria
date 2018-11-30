@@ -28,7 +28,7 @@
 </script>
 
 <style lang="scss">
-  @import "../scss/_variables.scss";
+  @import "../scss/_common.scss";
 
   .menu-pizza{
     background: skyblue;
