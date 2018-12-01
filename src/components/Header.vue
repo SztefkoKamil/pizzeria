@@ -32,6 +32,8 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px 10px 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 
     .header-logo{
       display: flex;

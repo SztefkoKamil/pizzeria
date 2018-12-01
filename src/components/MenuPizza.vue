@@ -1,21 +1,21 @@
 <template>
   <article class="menu-pizza">
-    <table>
+    <table class="pizza-table">
       <thead>
         <th>Nr</th>
         <th>Nazwa</th>
         <th>Składniki</th>
-        <th>mała: 32cm</th>
-        <th>średnia: 40cm</th>
-        <th>duża: 50cm</th>
+        <th class="pizza-size">mała: 32cm</th>
+        <th class="pizza-size">średnia: 40cm</th>
+        <th class="pizza-size">duża: 50cm</th>
       </thead>
-      <tr v-for="pizza in menu.pizza" :key="pizza.id">
+      <tr class="pizza-row" v-for="pizza in menu.pizza" :key="pizza.id">
         <td>{{ pizza.id }}</td>
-        <td>{{ pizza.name }}</td>
-        <td>{{ pizza.components }}</td>
-        <td>{{ pizza.sm }}</td>
-        <td>{{ pizza.md }}</td>
-        <td>{{ pizza.lg }}</td>
+        <td class="pizza-name">{{ pizza.name }}</td>
+        <td class="components">{{ pizza.components }}</td>
+        <td class="pizza-price">{{ pizza.sm }}</td>
+        <td class="pizza-price">{{ pizza.md }}</td>
+        <td class="pizza-price">{{ pizza.lg }}</td>
       </tr>
     </table>
   </article>
@@ -32,6 +32,36 @@
 
   .menu-pizza{
     background: skyblue;
+
+    .pizza-table{
+      padding: 10px;
+      border-collapse: collapse;
+    }
+
+    .pizza-size{
+      font-size: 14px;
+
+    }
+
+    .pizza-row{
+      padding: 1px;
+
+      .pizza-name{
+        text-align: center;
+        padding: 0 5px;
+      }
+      .components{
+        font-size: 14px;
+      }
+      .pizza-price{
+        text-align: center;
+      }
+    }
+    .pizza-row:nth-child(odd){
+      background: lightblue;
+
+    }
+
   }
 
 </style>

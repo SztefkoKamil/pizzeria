@@ -47,6 +47,16 @@ export default {
       text-align: center;
       padding: 20px;
       width: $mainWidth;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    p:first-child{
+      margin-bottom: 10px;
+
+      span:nth-child(2){
+        margin: 0 20px;
+      }
     }
   }
 

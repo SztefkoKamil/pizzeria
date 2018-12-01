@@ -75,12 +75,14 @@ export default {
     .start-title{
       font-family: 'Open Sans', sans-serif;
       text-align: center;
-      padding: 20px;
+      font-size: 40px;
+      padding: 30px;
     }
 
     .swiper-wrapper{
-      background: #5E4B56;
+      background: #120D31;
       padding: 20px 0 18px 0;
+      border-radius: 15px;
       
       .swiper-box {
         width: 700px;
@@ -93,9 +95,10 @@ export default {
     }
 
     .start-about{
-      padding: 20px;
+      padding: 40px;
       font-size: 18px;
-      line-height: 22px;;
+      line-height: 24px;;
+      text-align: center;
     }
   }
 
