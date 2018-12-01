@@ -73,14 +73,14 @@ export default {
     background: $bgColor;
 
     .start-title{
-      font-family: 'Open Sans', sans-serif;
+      font-family: $titleFont;
       text-align: center;
       font-size: 40px;
       padding: 30px;
     }
 
     .swiper-wrapper{
-      background: #120D31;
+      background: $sectionColor;
       padding: 20px 0 18px 0;
       border-radius: 15px;
       

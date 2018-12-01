@@ -27,7 +27,7 @@ export default {
   .header{
     height: 120px;
     width: $mainWidth;
-    background: #120D31;
+    background: $sectionColor;
     display: flex;
     justify-content: space-between;
     align-items: center;

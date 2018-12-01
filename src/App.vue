@@ -42,7 +42,7 @@ export default {
     font-family: "Arial";
     
     .footer{
-      background: #120D31;
+      background: $sectionColor;
       color: #ddd;
       text-align: center;
       padding: 20px;
