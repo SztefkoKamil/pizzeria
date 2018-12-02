@@ -32,6 +32,10 @@
             <textarea class="form-border" id="form-message"></textarea>
           </div>
           <button class="send-btn form-border">Wyślij</button>
+          <div class="response">
+            <!-- <span class="success">Wiadomość została wysłana. Dziękujemy!</span> -->
+            <!-- <span class="error">Błąd wysyłania. Spróbuj ponownie za kilka minut.</span> -->
+          </div>
         </form>
       </div>
   </section>
@@ -153,6 +157,20 @@ export default {
           }
       }
 
+    }
+
+    .response{
+      width: 300px;
+      height: 50px;
+      padding: 15px;
+      text-align: center;
+
+      .success{
+        color: green;
+      }
+      .error{
+        color: red;
+      }
     }
 
   }

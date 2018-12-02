@@ -2,7 +2,7 @@
   <article class="menu-addons">
     <table class="addons-table">
       <thead class="cell">
-        <th class="to-left cell">Dodatki:</th>
+        <th class="to-left cell">Dodatki</th>
         <th>mała</th>
         <th>średnia</th>
         <th>duża</th>
@@ -18,7 +18,7 @@
     </table>
     <table class="addons-table">
       <thead>
-        <th class="to-left cell">Sosy:</th>
+        <th class="to-left cell">Sosy</th>
       </thead>
       <tbody>
         <tr v-for="addon in menu.addons.sosy" :key="addon.name">
@@ -29,7 +29,7 @@
     </table>
     <table class="addons-table">
       <thead>
-        <th class="to-left cell">Napoje:</th>
+        <th class="to-left cell">Napoje</th>
       </thead>
       <tbody>
         <tr v-for="addon in menu.addons.napoje" :key="addon.name">

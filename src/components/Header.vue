@@ -8,9 +8,9 @@
       </h1>
     </div>
     <nav class="header-nav">
-      <router-link class="menu-link" to="/">Główna</router-link>
+      <router-link class="menu-link" to="/" exact>Główna</router-link>
       <router-link class="menu-link" to="/menu">Menu</router-link>
-      <router-link class="menu-link" to="/contact">Kontakt</router-link>
+      <router-link class="menu-link" to="/contact" exact>Kontakt</router-link>
     </nav>
   </header>
 </template>
@@ -77,8 +77,9 @@ export default {
           background: lightblue;
         }
       }
-      .router-link-exact-active{
+      .router-link-active{
         border: 1px solid #000;
+        background: lightblue;
       }
     }
   }
