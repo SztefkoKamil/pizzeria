@@ -60,7 +60,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #A690A4;
+      background: skyblue;
       padding: 7px;
       border-radius: 5px;
 
@@ -68,13 +68,13 @@ export default {
         text-decoration: none;
         font-weight: bold;
         color: #000;
-        background: #A690A4;
+        background: transparent;
         padding: 5px;
         border-radius: 5px;
         transition: all .2s;
 
         &:hover{
-          background: rgb(131, 112, 129);
+          background: lightblue;
         }
       }
       .router-link-exact-active{

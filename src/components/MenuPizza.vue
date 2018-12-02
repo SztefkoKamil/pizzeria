@@ -2,10 +2,7 @@
   <article class="menu-pizza">
     <table class="pizza-table">
       <thead>
-        <th class="cell head-name">
-          <span>Nr</span>
-          <span>Nazwa</span>
-        </th>
+        <th class="cell head-name">Nr i Nazwa</th>
         <th class="cell">Składniki</th>
         <th class="pizza-size cell">
           <div><span></span>mała:<span class="size">32cm</span></div>
@@ -56,6 +53,7 @@
 
       .head-name{
         width: 180px;
+        text-align: left;
       }
 
       .pizza-size{
