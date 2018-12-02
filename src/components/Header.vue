@@ -41,16 +41,21 @@ export default {
 
       .logo-img{
         width: 150px;
-        margin-right: 20px;
+        margin-right: 5px;
       }
     
       .header-title{
         font-family: 'Gloria Hallelujah', cursive;
         font-size: 50px;
         color: #471323;
+        letter-spacing: 0px;
         $shadowColor: #1bad34;
         text-shadow: 1px 1px 0 $shadowColor, -1px 1px 0 $shadowColor, 
                     -1px -1px 0 $shadowColor, 1px -1px 0 $shadowColor;
+
+        &:first-child{
+          margin-right: 10px;
+        }
       }
     }
 

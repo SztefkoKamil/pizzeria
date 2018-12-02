@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss">
   @import "./scss/_common.scss";
+  @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans:400,700&amp;subset=latin-ext");
 
   *{
     margin: 0;
