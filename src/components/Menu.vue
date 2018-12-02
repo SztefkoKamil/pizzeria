@@ -4,7 +4,7 @@
       <router-link class="submenu-link" to="/menu">Pizza</router-link>
       <router-link class="submenu-link" to="/menu/addons">Napoje i Dodatki</router-link>
     </div>
-    <router-view :menu="menu"></router-view>
+      <router-view :menu="menu"></router-view>
   </section>
 </template>
 
@@ -633,19 +633,28 @@ export default {
   .menu{
     width: $mainWidth;
     min-height: 600px;
-    background: $bgColor;
+    background: $sectionColor;
+    margin: 50px 0 80px 0;
+    border-radius: 15px;
+    padding: 20px 0 30px 0;
 
     .submenu{
-      text-align: center;
-      padding: 10px;
+      display: flex;
+      justify-content: center;
 
       .submenu-link{
         text-decoration: none;
-        background: #c5f7e2;
+        background: skyblue;
         color: #000;
-        padding: 5px;
+        padding: 5px 10px 5px 10px;
         font-size: 20px;
         margin: 0 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .router-link-exact-active{
+        background: lightblue;
       }
     }
   }

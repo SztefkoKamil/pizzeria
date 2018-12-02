@@ -7,9 +7,9 @@
       </transition>
     </main>
     <footer class="footer">
-      <p>
+      <p class="p-1">
         <span>Telefon: 11 222 33 44</span>
-        <span>Adres: Krakowska 40, 43-340 Kozy</span>
+        <span class="span-2">Adres: Krakowska 40, 43-340 Kozy</span>
         <span>Czynne codziennie od 10 do 22.</span>
       </p>
       <p>Kamil Sztefko 2018 &copy &#8195 Strona demonstracyjna. &#8195 e-mail: sztefkokamil@gmail.com</p>
@@ -49,15 +49,17 @@ export default {
       width: $mainWidth;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
-    }
 
-    p:first-child{
-      margin-bottom: 10px;
-
-      span:nth-child(2){
-        margin: 0 20px;
+      .p-1{
+        margin-bottom: 10px;
+  
+        .span-2{
+          margin: 0 20px;
+        }
       }
+
     }
+
   }
 
   /* ----- Vue transition ----- */
