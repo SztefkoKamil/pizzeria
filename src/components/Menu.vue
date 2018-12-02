@@ -4,7 +4,9 @@
       <router-link class="submenu-link" to="/menu">Pizza</router-link>
       <router-link class="submenu-link" to="/menu/addons">Napoje i Dodatki</router-link>
     </div>
+    <transition name="shrink" mode="out-in">
       <router-view :menu="menu"></router-view>
+    </transition>
   </section>
 </template>
 
@@ -632,7 +634,6 @@ export default {
 
   .menu{
     width: $mainWidth;
-    min-height: 600px;
     background: $sectionColor;
     margin: 50px 0 80px 0;
     border-radius: 15px;
@@ -656,6 +657,33 @@ export default {
       .router-link-exact-active{
         background: lightblue;
       }
+    }
+  }
+
+  .shrink-enter{
+    max-height: 1px
+  }
+  .shrink-enter-active{
+    animation: shrink-down .8s linear 1;
+  }
+  @keyframes shrink-down{
+    0%{
+      max-height: 1px;
+    }
+    100%{
+      max-height: 2394px;
+    }
+  }
+
+  .shrink-leave-active{
+    animation: shrink-up .8s linear 1;
+  }
+  @keyframes shrink-up{
+    0%{
+      max-height: 2394px;
+    }
+    100%{
+      max-height: 1px;
     }
   }
 
