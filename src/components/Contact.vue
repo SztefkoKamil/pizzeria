@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="map-wrapper">
-        <div id="map"></div>
+        <div id="map" class="map"></div>
       </div>
       <div class="contact-form">
         <h3 class="form-title">Masz pytania? Napisz do nas!</h3>
@@ -54,17 +54,34 @@ export default {
 
   .contact{
     width: $mainWidth;
-    min-height: 600px;
     background: $bgColor;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (max-width: 960px){
+      width: 100vw;
+    }
 
     .contact-title{
       font-family: $titleFont;
       text-align: center;
       font-size: 30px;
       padding: 30px;
+
+      @media screen and (max-width: 890px){
+        padding: 30px 160px;
+      }
+      @media screen and (max-width: 765px){
+        padding: 30px 90px;
+      }
+      @media screen and (max-width: 624px){
+        padding: 30px 20px;
+      }
+      @media screen and (max-width: 500px){
+        font-size: 26px;
+        padding: 30px 20px;
+      }
     }
 
     .contact-info{
@@ -74,10 +91,21 @@ export default {
       grid-auto-rows: 40px;
       margin: 0 auto;
 
+      @media screen and (max-width: 760px){
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
       span{
         font-size: 18px;
         padding: 10px;
         text-align: center;
+
+        @media screen and (max-width: 760px){
+          padding: 10px 20px;
+        }
       }
     }
 
@@ -88,12 +116,23 @@ export default {
       border-radius: 15px;
       margin: 50px 0;
 
-      #map{
+      @media screen and (max-width: 960px){
+        border-radius: 0;
+      }
+
+      .map{
         width: 700px;
         height: 420px;
         margin: 0 auto;
+
+        @media screen and (max-width: 700px){
+          width: 100vw;
+        }
+        @media screen and (max-width: 500px){
+          height: 320px;
+        }
       }
-    }
+    } /*  .map-wrapper  */
 
     .contact-form{
       margin-bottom: 70px;
@@ -101,6 +140,12 @@ export default {
       .form-title{
         font-size: 24px;
         font-family: $titleFont;
+        padding: 10px 20px;
+        text-align: center;
+
+        @media screen and (max-width: 390px){
+          padding: 10px 70px;
+        }
       }
 
       label{
@@ -112,6 +157,8 @@ export default {
         height: 36px;
         text-align: center;
         font-size: 18px;
+        background: #fff;
+        color: #000;
       }
 
       textarea{
@@ -120,6 +167,8 @@ export default {
         padding: 5px;
         line-height: 20px;
         user-select: text;
+        background: #fff;
+        color: #000;
       }
 
       .form-flex{
@@ -157,21 +206,20 @@ export default {
           }
       }
 
-    }
+      .response{
+        width: 300px;
+        height: 50px;
+        padding: 15px;
+        text-align: center;
 
-    .response{
-      width: 300px;
-      height: 50px;
-      padding: 15px;
-      text-align: center;
-
-      .success{
-        color: green;
+        .success{
+          color: green;
+        }
+        .error{
+          color: red;
+        }
       }
-      .error{
-        color: red;
-      }
-    }
+    } /*  .contact-form  */
 
   }
 
