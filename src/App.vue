@@ -7,15 +7,15 @@
       </transition>
     </main>
     <footer class="footer">
-      <p>
-        <span>Telefon: 11 222 33 44</span>
-        <span class="span-2">Adres: Krakowska 40, 43-340 Kozy</span>
-        <span>Czynne codziennie od 10 do 22.</span>
+      <p class="footer-p">
+        <span class="footer-span">Telefon: 11 222 33 44</span>
+        <span class="footer-span footer-span-2">Adres: Krakowska 40, 43-340 Kozy</span>
+        <span class="footer-span">Czynne codziennie od 10 do 22.</span>
       </p>
-      <p>
-        <span>Kamil Sztefko 2018 &copy</span>
-        <span class="span-2">Strona demonstracyjna.</span>
-        <span>e-mail: sztefkokamil@gmail.com</span>
+      <p class="footer-p">
+        <span class="footer-span">Kamil Sztefko 2018 &copy</span>
+        <span class="footer-span footer-span-2">Strona demonstracyjna.</span>
+        <span class="footer-span">e-mail: sztefkokamil@gmail.com</span>
         </p>
     </footer>
   </div>
@@ -60,15 +60,24 @@ export default {
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
 
-      p{
+      .footer-p{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
 
-        span{
+        .footer-span{
           padding: 10px 0;
+
+          @media screen and (max-width: 602px){
+            padding: 4px 0;
+          }
+
+          @media screen and (max-width: 420px){
+            font-size: 14px;
+          }
         }
-        .span-2{
+
+        .footer-span-2{
           margin: 0 20px;
         }
       }
@@ -77,7 +86,10 @@ export default {
         width: 100vw;
         border-radius: 0;
       }
+    }
 
+    @media screen and (max-width: 960px){
+      display: block;
     }
 
   }

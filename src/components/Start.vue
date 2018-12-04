@@ -77,7 +77,31 @@ export default {
       text-align: center;
       font-size: 40px;
       padding: 30px;
-    }
+
+      @media screen and (max-width: 880px){
+        padding: 30px 140px;
+      }
+
+      @media screen and (max-width: 780px){
+        font-size: 36px;
+        padding: 30px 120px;
+      }
+
+      @media screen and (max-width: 690px){
+        font-size: 36px;
+        padding: 30px 76px;
+      }
+
+      @media screen and (max-width: 602px){
+        font-size: 34px;
+        padding: 30px 42px;
+      }
+
+      @media screen and (max-width: 342px){
+        font-size: 30px;
+        padding: 30px 42px;
+      }
+    } /*  .start-title  */
 
     .swiper-wrapper{
       background: $sectionColor;
@@ -91,16 +115,38 @@ export default {
         .swiper-item {
           width: 100%;
         }
+
+        @media screen and (max-width: 700px){
+          width: 100vw;
+
+          img{
+            width: 100vw;
+          }
+        }
       }
-    }
+
+      @media screen and (max-width: 960px){
+        border-radius: 0;
+      }
+    } /*  .swiper-wrapper  */
 
     .start-about{
       padding: 40px;
       font-size: 18px;
       line-height: 24px;;
       text-align: center;
+
+      @media screen and (max-width: 602px){
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: 420px){
+        padding: 30px;
+      }
+    }
+
+    @media screen and (max-width: 960px){
+      width: 100vw;
     }
   }
-
-
 </style>
