@@ -639,9 +639,18 @@ export default {
     border-radius: 15px;
     padding: 20px 0 30px 0;
 
+    @media screen and (max-width: 960px){
+      border-radius: 0;
+      width: 100vw;
+    }
+
     .submenu{
       display: flex;
       justify-content: center;
+
+      @media screen and (max-width: 960px){
+        width: 100vw;
+      }
 
       .submenu-link{
         text-decoration: none;

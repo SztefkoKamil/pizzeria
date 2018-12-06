@@ -1,43 +1,43 @@
 <template>
   <article class="menu-addons">
-    <table class="addons-table">
-      <thead class="cell">
-        <th class="to-left cell">Dodatki</th>
-        <th>mała</th>
-        <th>średnia</th>
-        <th>duża</th>
-      </thead>
-      <tbody>
-        <tr v-for="addon in menu.addons.dodatki" :key="addon">
-          <td class="cell">{{ addon.name }}</td>
-          <td class="cell center">{{ addon.sm }}</td>
-          <td class="cell center">{{ addon.md }}</td>
-          <td class="cell center">{{ addon.lg }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="addons-table">
-      <thead>
-        <th class="to-left cell">Sosy</th>
-      </thead>
-      <tbody>
-        <tr v-for="addon in menu.addons.sosy" :key="addon.name">
-          <td class="cell">{{ addon.name }}</td>
-          <td class="cell">{{ addon.price }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="addons-table">
-      <thead>
-        <th class="to-left cell">Napoje</th>
-      </thead>
-      <tbody>
-        <tr v-for="addon in menu.addons.napoje" :key="addon.name">
-          <td class="cell">{{ addon.name }}</td>
-          <td class="cell">{{ addon.price }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="addons-table">
+      <h4 class="table-row">
+        <span class="table-cell mobile-adjust">Dodatki</span>
+        <span class="table-cell">mała</span>
+        <span class="table-cell">średnia</span>
+        <span class="table-cell">duża</span>
+      </h4>
+      <ul class="table-body">
+        <li class="table-row" v-for="addon in menu.addons.dodatki" :key="addon.name">
+          <span class="table-cell mobile-adjust">{{ addon.name }}</span>
+          <span class="table-cell">{{ addon.sm }}</span>
+          <span class="table-cell">{{ addon.md }}</span>
+          <span class="table-cell">{{ addon.lg }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="addons-table">
+      <h4 class="table-row">
+        <span class="table-cell">Sosy</span>
+      </h4>
+      <ul class="table-body">
+        <li class="table-row" v-for="addon in menu.addons.sosy" :key="addon.name">
+          <span class="table-cell">{{ addon.name }}</span>
+          <span class="table-cell">{{ addon.price }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="addons-table">
+      <h4 class="table-row">
+        <span class="table-cell">Napoje</span>
+      </h4>
+      <ul class="table-body">
+        <li class="table-row" v-for="addon in menu.addons.napoje" :key="addon.name">
+          <span class="table-cell">{{ addon.name }}</span>
+          <span class="table-cell">{{ addon.price }}</span>
+        </li>
+      </ul>
+    </div>
   </article>
 </template>
 
@@ -56,26 +56,48 @@
     align-items: center;
     overflow: hidden;
 
+    @media screen and (max-width: 900px){
+      width: 100vw;
+    }
+
     .addons-table{
       background: lightblue;
-      border-collapse: collapse;
+      display: flex;
+      flex-direction: column;
       width: 860px;
       margin-bottom: 10px;
 
-      .cell{
-        padding: 5px 10px;
+      @media screen and (max-width: 860px){
+        width: 100vw;
       }
 
-      .to-left{
-        text-align: left;
+      .table-row{
+        display: flex;
+        padding-left: 5px;
+
+        .table-cell{
+          text-align: center;
+          flex-grow: 1;
+          flex-basis: 100px;
+          padding: 5px;
+
+          &:first-child{
+            text-align: left;
+            flex-grow: 3;
+          }
+        }
+
+        .table-cell.mobile-adjust{
+          @media screen and (max-width: 550px){
+            flex-grow: 20;
+          }
+        }
       }
 
-      .center{
-        text-align: center;
-      }
-
-      tr:nth-child(odd){
-        background: skyblue;
+      .table-body{
+        .table-row:nth-child(odd){
+          background: skyblue;
+        }
       }
     }
   }
