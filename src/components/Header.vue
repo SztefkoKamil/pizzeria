@@ -12,20 +12,22 @@
       <router-link class="menu-link" to="/menu">Menu</router-link>
       <router-link class="menu-link" to="/contact" exact>Kontakt</router-link>
     </nav>
-    <nav v-if="mobile" class="mobile-nav">
-      <div class="mobile-menu">
-        <router-link class="mobile-link" to="/" exact>Główna</router-link>
-        <router-link class="mobile-link" to="/menu">Menu</router-link>
-        <router-link class="mobile-link" to="/contact" exact>Kontakt</router-link>
-      </div>
+    <div v-if="mobile">
+      <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu">
+          <router-link class="mobile-link" to="/" exact>Główna</router-link>
+          <router-link class="mobile-link" to="/menu">Menu</router-link>
+          <router-link class="mobile-link" to="/contact" exact>Kontakt</router-link>
+        </div>
+      </nav>
       <div class="mobile-icon-wrapper">
-        <div class="mobile-icon-container">
+        <div class="mobile-icon-container" id="mobile-button" @click="toggleMenu">
           <div class="mobile-icon-bar"></div>
           <div class="mobile-icon-bar"></div>
           <div class="mobile-icon-bar"></div>
         </div>
       </div>
-    </nav>
+    </div>
   </header>
 </template>
 
@@ -33,8 +35,40 @@
 export default {
   data(){
     return {
-      mobile: true
+      mobile: false
     }
+  },
+  methods: {
+    toggleMenu(){
+      const menu = document.getElementById('mobile-nav');
+      const button = document.getElementById('mobile-button');
+
+      if(menu.style.height == '75px'){
+        menu.style.height='0px';
+        button.style.transform='rotate(0deg)';
+      }
+      else {
+       menu.style.height='75px';
+        button.style.transform='rotate(-90deg)';
+      }
+    },
+    windowSizeCheck(){
+      const windowWidth = window.innerWidth;
+
+      if(windowWidth < 550){
+        this.mobile = true;
+      }
+      else {
+        this.mobile = false;
+      }
+    }
+  },
+  beforeMount(){
+    this.windowSizeCheck();
+
+    window.addEventListener('resize', () => {
+      this.windowSizeCheck();
+    });
   }
 }
 </script>
@@ -140,12 +174,14 @@ export default {
 
     .mobile-nav{
       position: absolute;
-      height: 75px;
+      height: 0px;  // 75px
       width: 100vw;
       top: 0;
       left: 0;
       background: skyblue;
       z-index: 2;
+      overflow: hidden;
+      transition: all 1s;
 
       .mobile-menu{
         width: 75vw;
@@ -168,45 +204,44 @@ export default {
           background: lightblue;
         }
       }
+    } // mobile-nav
 
-      .mobile-icon-wrapper{
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 70px;
-        height: 70px;
-        background: transparent;
-        z-index: 4;
+    .mobile-icon-wrapper{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 70px;
+      background: transparent;
+      z-index: 4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .mobile-icon-container{
+        width: 50px;
+        height: 50px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background: skyblue;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
+        padding: 10px 0;
+        transition: all 1s;
 
-        .mobile-icon-container{
-          width: 50px;
-          height: 50px;
-          border: 1px solid #000;
-          border-radius: 5px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-          padding: 10px 0;
-          transition: all 1s;
-
-          .mobile-icon-bar{
-            width: 30px;
-            height: 5px;
-            background: #000;
-          }
-        }
-
-        .mobile-icon-open{
-          transform: rotate(90deg);
+        .mobile-icon-bar{
+          width: 30px;
+          height: 5px;
+          background: #000;
         }
       }
 
-      
-    } // mobile-nav
+      .mobile-icon-open{
+        transform: rotate(90deg);
+      }
+    } // mobile-icon-wrapper
   }
 
 </style>
