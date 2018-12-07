@@ -1,25 +1,27 @@
 <template>
   <article class="menu-pizza">
-    <table class="pizza-table">
-      <thead>
-        <th class="cell head-name">Nr i Nazwa</th>
-        <th class="cell">Składniki</th>
-        <th class="pizza-size cell">
-          <div><span></span>mała:<span class="size">32cm</span></div>
-          <div><span>średnia:</span><span class="size">40cm</span></div>
-          <div><span>duża:</span><span class="size">50cm</span></div>
-        </th>
-      </thead>
-      <tr class="pizza-row" v-for="pizza in menu.pizza" :key="pizza.id">
-        <td class="pizza-name cell">{{ pizza.id }}. {{ pizza.name }}</td>
-        <td class="components cell">{{ pizza.components }}</td>
-        <td class="pizza-price cell">
-          <span>{{ pizza.sm }}</span>
-          <span>{{ pizza.md }}</span>
-          <span>{{ pizza.lg }}</span>
-        </td>
-      </tr>
-    </table>
+    <div class="pizza-table">
+      <div class="table-row">
+        <h4 class="name">Nr i Nazwa</h4>
+        <h4 class="components">Składniki</h4>
+        <h4 class="price">
+          <div class="size"><span>mała:</span><span>32cm</span></div>
+          <div class="size"><span>średnia:</span><span>40cm</span></div>
+          <div class="size"><span>duża:</span><span>50cm</span></div>
+        </h4>
+      </div>
+      <ul>
+        <li class="table-row" v-for="pizza in menu.pizza" :key="pizza.id">
+          <div class="name">{{ pizza.id }}. {{ pizza.name }}</div>
+          <div class="components">{{ pizza.components }}</div>
+          <div class="price">
+            <span>{{ pizza.sm }}</span>
+            <span>{{ pizza.md }}</span>
+            <span>{{ pizza.lg }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </article>
 </template>
 
@@ -38,51 +40,73 @@
     overflow: hidden;
 
     .pizza-table{
-      padding: 10px;
-      border-collapse: collapse;
-      background: skyblue;
+      background: lightblue;
       width: 860px;
 
-      .cell{
-        padding: 5px 10px;
+      @media screen and (max-width: 860px){
+        width: 100vw;
       }
 
-      th{
-        background: lightblue;
-      }
-
-      .head-name{
-        width: 180px;
-        text-align: left;
-      }
-
-      .pizza-size{
-        font-size: 14px;
+      h4{
         display: flex;
-        justify-content: space-between;
-        width: 300px;
-        padding: 6px 10px;
-
-        .size{
-          margin-left: 5px;
-        }
+        align-items: center;
       }
 
-      .pizza-row{
-        padding: 1px;
+      .table-row{
+        display: grid;
+        grid-template-columns: 165px 1fr 180px;
+        padding: 5px;
 
-        .components{
-          font-size: 14px;
+        @media screen and (max-width: 750px){
+          grid-template-columns: 1fr 1fr;
+          grid-row-gap: 5px;
+          padding: 10px 5px;
         }
-        .pizza-price{
+
+        .name{
+          grid-column: 1;
+
+          @media screen and (max-width: 750px){
+            grid-column: 1;
+            grid-row: 1;
+          }
+        }
+        .components{
+          grid-column: 2;
+
+          @media screen and (max-width: 750px){
+            grid-column: 1/3;
+            grid-row: 2;
+            text-align: center;
+            border-top: 1px solid #191051;
+            padding-top: 5px;
+          }
+        }
+        .price{
+          grid-column: 3;
           display: flex;
           justify-content: space-around;
+
+          @media screen and (max-width: 750px){
+            grid-column: 2;
+            grid-row: 1;
+          }
+
+          @media screen and (max-width: 420px){
+            font-size: 14px;
+          }
+
+          .size{
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
-      .pizza-row:nth-child(odd){
-        background: lightblue;
 
+      li.table-row:nth-child(odd){
+        background: skyblue;
       }
+      
     }
   }
 

@@ -56,10 +56,6 @@
     align-items: center;
     overflow: hidden;
 
-    @media screen and (max-width: 900px){
-      width: 100vw;
-    }
-
     .addons-table{
       background: lightblue;
       display: flex;
@@ -95,6 +91,8 @@
       }
 
       .table-body{
+        list-style-type: none;
+
         .table-row:nth-child(odd){
           background: skyblue;
         }

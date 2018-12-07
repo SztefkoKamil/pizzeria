@@ -147,7 +147,7 @@ export default {
           "17": {
             "id": "17",
             "name": "Kozia",
-            "components": "ser, sos pom., ser pleúniowy, ser feta, ser mozzarella",
+            "components": "ser, sos pom., ser pleśniowy, ser feta, ser mozzarella",
             "sm": "26,90",
             "md": "35,90",
             "lg": "41,90"
@@ -679,6 +679,9 @@ export default {
     0%{
       max-height: 1px;
     }
+    50%{
+      max-height: 500px;
+    }
     100%{
       max-height: 2394px;
     }
@@ -690,6 +693,9 @@ export default {
   @keyframes shrink-up{
     0%{
       max-height: 2394px;
+    }
+    50%{
+      max-height: 500px;
     }
     100%{
       max-height: 1px;
