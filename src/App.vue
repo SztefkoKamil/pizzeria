@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="return-button" id="return-button" @click="backToTop">
+      <img class="return-icon" src="src/assets/img/rewind.png" alt="back to top arrow icon">
+    </div>
     <app-header></app-header>
     <main>
       <transition name="fade" mode="out-in">
@@ -25,7 +28,40 @@
 import Header from './components/Header'
 
 export default {
-  components: { 'app-header': Header }
+  components: { 'app-header': Header },
+  data(){
+    return {
+      returnButton: false
+    }
+  },
+  created(){
+    window.addEventListener('scroll', () => {
+      if(window.pageYOffset > 100 && this.returnButton == false){
+        this.returnButton = true;
+        this.toggleReturn();
+      }
+      else if(window.pageYOffset < 100 && this.returnButton == true){
+        this.returnButton = false;
+        this.toggleReturn();
+      }
+      if(window.pageYOffset == 0){
+        this.backToTop();
+      }
+    })
+  },
+  methods: {
+    toggleReturn(){
+      const button = document.getElementById('return-button');
+      button.classList.toggle('show-return');
+    },
+    backToTop(){
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
 }
 </script>
 
@@ -48,6 +84,45 @@ export default {
     flex-direction: column;
     align-items: center;
     font-family: "Arial";
+
+    .return-button{
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      width: 40px;
+      height: 50px;
+      background: skyblue;
+      border: 2px solid #000;
+      border-radius: 10px;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: -1;
+      opacity: 0;
+      transition: all .1s linear;
+
+      .return-icon{
+        transform: rotate(90deg);
+        width: 30px;
+        position: absolute;
+        left: 3px;
+        top: 13px;
+        animation: move 1s linear infinite alternate;
+        @keyframes move{
+          0%{
+            top: 13px;
+          }
+          100%{
+            top: 2px;
+          }
+        }
+      }
+
+    } // return-button
+
+    .show-return{
+        z-index: 100;
+        opacity: 1;
+    }
     
     .footer{
       display: flex;
