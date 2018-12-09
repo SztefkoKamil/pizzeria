@@ -17,24 +17,32 @@
         <form class="form-flex">
           <div class="form-flex">
             <label for="form-name">Twoje imię</label>
-            <input class="form-border" type="text" id="form-name">
+            <input class="form-border" type="text" id="form-name" 
+            v-model="name" :class="{ 'input-error': nameValid }">
+            <span v-if="nameValid" class="input-tip">Musisz podać imię.</span>
           </div>
           <div class="form-flex">
             <label for="form-email">Twój e-mail</label>
-            <input class="form-border" type="email" id="form-email">
+            <input class="form-border" type="email" id="form-email" 
+            v-model="email" :class="{ 'input-error': emailValid }">
+            <span v-if="emailValid" class="input-tip">Podaj poprawny email lub telefon.</span>
           </div>
           <div class="form-flex">
             <label for="form-phone">Twój nr. telefonu</label>
-            <input class="form-border" type="text" id="form-phone">
+            <input class="form-border" type="text" id="form-phone" 
+            v-model="phone" :class="{ 'input-error': phoneValid }">
+            <span v-if="phoneValid" class="input-tip">Podaj poprawny email lub telefon.</span>
           </div>
           <div class="form-flex">
             <label for="form-message">Wiadomość</label>
-            <textarea class="form-border" id="form-message"></textarea>
+            <textarea class="form-border" id="form-message" 
+            v-model="message" :class="{ 'input-error': messageValid }"></textarea>
+            <span v-if="messageValid" class="input-tip">Musisz wpisać wiadomość.</span>
           </div>
-          <button class="send-btn form-border">Wyślij</button>
+          <button class="send-btn form-border" @click.prevent="submit">Wyślij</button>
           <div class="response">
-            <!-- <span class="success">Wiadomość została wysłana. Dziękujemy!</span> -->
-            <!-- <span class="error">Błąd wysyłania. Spróbuj ponownie za kilka minut.</span> -->
+            <span v-if="responseSuccess" class="response-success">Wiadomość została wysłana. Dziękujemy!</span>
+            <span v-if="responseError" class="response-error">Błąd wysyłania. Spróbuj ponownie za kilka minut.</span>
           </div>
         </form>
       </div>
@@ -42,9 +50,81 @@
 </template>
 
 <script>
+
 export default {
+  data(){
+    return {
+      name: '',
+      nameValid: false,
+      email: '',
+      emailValid: false,
+      phone: '',
+      phoneValid: false,
+      message: '',
+      messageValid: false,
+      responseSuccess: false,
+      responseError: false
+    }
+  },
   mounted(){
     initMap();
+  },
+  methods: {
+    nameValidation(){
+      if(this.name == ''){ this.nameValid = true; }
+      else { this.nameValid = false }
+    },
+    emailValidation(){
+      const pattern = /^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/;
+      const isValid = pattern.test(this.email);
+      this.emailValid = !isValid;
+    },
+    phoneValidation(){
+      const pattern = /^[0-9]{7,9}$/;
+      const isValid = pattern.test(this.phone);
+      this.phoneValid = !isValid;
+    },
+    messageValidation(){
+      if(this.message == ''){ this.messageValid = true; }
+      else { this.messageValid = false }
+    },
+    submit(){
+      
+      this.nameValidation();
+      this.emailValidation();
+      this.phoneValidation();
+      this.messageValidation();
+
+      if(!this.emailValid || !this.phoneValid){
+        this.emailValid = false;
+        this.phoneValid = false;
+      }
+
+      if(!this.nameValid && !this.emailValid && !this.phoneValid && !this.messageValid){
+        console.log('form is valid');
+
+        const data = {
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          message: this.message
+        };
+
+        console.log(data);
+
+        this.$http.post('mail.php', data).then(resp => {
+          if(resp.body == 'success'){
+            this.responseSuccess = true;
+            this.responseError = false;
+          }
+          else if(resp.body = 'error'){
+            this.responseSuccess = false;
+            this.responseError = true;
+          }
+        })
+      }
+
+    }
   }
 }
 </script>
@@ -212,12 +292,21 @@ export default {
         padding: 15px;
         text-align: center;
 
-        .success{
+        .response-success{
           color: green;
         }
-        .error{
+        .response-error{
           color: red;
         }
+      }
+
+      .input-error{
+        border: 2px solid red;
+        border-radius: 6px;
+      }
+      .input-tip{
+        color: red;
+        margin-top: 5px;
       }
     } /*  .contact-form  */
 

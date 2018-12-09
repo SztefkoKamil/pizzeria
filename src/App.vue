@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="return-button" id="return-button" @click="backToTop">
-      <img class="return-icon" src="src/assets/img/rewind.png" alt="back to top arrow icon">
+      <img class="return-icon" src="./assets/img/rewind.png" alt="back to top arrow icon">
     </div>
     <app-header></app-header>
     <main>
@@ -16,7 +16,7 @@
         <span class="footer-span">Czynne codziennie od 10 do 22.</span>
       </p>
       <p class="footer-p">
-        <span class="footer-span">Kamil Sztefko 2018 &copy</span>
+        <span class="footer-span">Kamil Sztefko 2018 &copy;</span>
         <span class="footer-span footer-span-2">Strona demonstracyjna.</span>
         <span class="footer-span">e-mail: sztefkokamil@gmail.com</span>
         </p>
