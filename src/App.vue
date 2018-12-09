@@ -44,9 +44,6 @@ export default {
         this.returnButton = false;
         this.toggleReturn();
       }
-      if(window.pageYOffset == 0){
-        this.backToTop();
-      }
     })
   },
   methods: {
@@ -55,11 +52,12 @@ export default {
       button.classList.toggle('show-return');
     },
     backToTop(){
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
+      const backToTop = setInterval(() => {
+        scrollBy(0, -80);
+        if(window.pageYOffset == 0){
+          clearInterval(backToTop);
+        }
+      }, 20);
     }
   }
 }

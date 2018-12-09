@@ -101,7 +101,6 @@ export default {
       }
 
       if(!this.nameValid && !this.emailValid && !this.phoneValid && !this.messageValid){
-        console.log('form is valid');
 
         const data = {
           name: this.name,
@@ -109,8 +108,6 @@ export default {
           phone: this.phone,
           message: this.message
         };
-
-        console.log(data);
 
         this.$http.post('mail.php', data).then(resp => {
           if(resp.body == 'success'){
